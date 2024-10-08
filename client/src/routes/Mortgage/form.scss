@@ -1,0 +1,35 @@
+// .form{
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   gap: 100px;
+//   margin-top: 50px;
+// }
+// .input{
+//   width: 400px;
+// }
+
+// .input-group input{
+// width: 400px;
+// }
+// .form-control{
+//   width: 200px;
+// }
+.input{
+  margin-left: 210px;
+  left: 0;
+  position: absolute;
+  margin-top: 50px;
+
+}
+.graph{
+ position: absolute;
+ right: 0;
+ margin-right: 210px;
+ margin-top: 50px;
+}
+
+.head{
+  font-size: 40px;
+  font-family: sans-serif;
+}

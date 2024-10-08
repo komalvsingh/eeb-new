@@ -1,0 +1,132 @@
+@import "../../responsive.scss";
+
+// Keyframes for animations
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateY(-10px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+// Search bar styling
+.searchBar {
+  display: flex;
+  flex-direction: column;
+  align-items: center; // Center items horizontally
+  gap: 15px; // Maintain gap
+
+  .type {
+    display: flex;
+    gap: 12px; // Maintain gap
+    align-items: center; // Center items vertically
+
+    button {
+      padding: 16px 34px; // Increased padding for height and width
+      font-size: 20px; // Increased font size
+      border: none; // Remove border
+      border-radius: 5px;
+      cursor: pointer;
+      background-color: white;
+      text-transform: capitalize;
+      transition: background-color 0.3s, color 0.3s, transform 0.3s;
+
+      &:hover {
+        transform: translateY(-3px); // Hover effect
+      }
+
+      &.active {
+        background-color: #ff9900;
+        color: white;
+      }
+
+      &:first-child {
+        border-top-left-radius: 7px; // Border radius
+        border-right: none;
+      }
+
+      &:last-child {
+        border-top-right-radius: 7px; // Border radius
+        border-left: none;
+      }
+    }
+  }
+
+  // Form styling
+  form {
+    display: flex;
+    justify-content: center; /* Center form items horizontally */
+    align-items: center; /* Center form items vertically */
+    gap: 15px; // Increased gap
+    border: none; // Remove border
+    height: auto; // Adjust height based on content
+    padding: 12px; // Increased padding
+    animation: fadeIn 0.5s ease-in-out;
+    flex-wrap: wrap; // Allow items to wrap to the next line if necessary
+
+    // Input styling
+    input {
+      border: 1px solid #ddd; // Add border color for inputs
+      border-radius: 7px; // Border radius
+      padding: 10px 15px; // Increased padding
+      font-size: 20px; // Increased font size
+      width: 220px; // Increased width
+      transition: border 0.3s, padding 0.3s;
+      margin-left: 10px; // Added left margin for gap
+
+      &:focus {
+        border: 1px solid #666; // Border color on focus
+        padding: 12px 20px; // Padding on focus
+      }
+    }
+
+    // Link styling
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: transparent;
+      border-radius: 7px; // Border radius
+      animation: slideIn 2s ease-in-out;
+
+      button {
+        border: none; // Remove border
+        border-radius: 50%;
+        cursor: pointer;
+        background-color: #ff9900;
+        padding: 16px; // Padding of the button
+        transition: background-color 0.3s, transform 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%; // Make button height full in its container
+        margin-left: 10px; // Added left margin for gap
+
+        &:hover {
+          background-color: #ffa900;
+          transform: translateY(-3px); // Hover effect
+        }
+
+        img {
+          width: 36px; // Increased width of the image
+          height: 36px; // Increased height of the image
+          transition: transform 0.3s;
+
+          &:hover {
+            transform: scale(1.3); // Increased hover scale
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,167 @@
+.Blog {
+  padding: 20px;
+  background-color: #f5f5f5;
+
+  h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+
+  .blog-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Exactly two columns */
+    gap: 20px;
+
+    .blog-item {
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 15px;
+      box-sizing: border-box;
+      transition: transform 0.3s, box-shadow 0.3s;
+      overflow: hidden;
+
+      &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .blog-image {
+        flex: 0 0 300px; /* Increase the width of the image container */
+        height: 300px; /* Decrease the height of the image container */
+        padding: 5px;
+
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 8px;
+        }
+      }
+
+      .blog-info {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        h2 {
+          font-size: 1.5rem;
+          color: #333;
+          margin: 10px 0;
+          font-weight: bold;
+        }
+
+        p {
+          font-size: 1rem;
+          color: #666;
+          margin: 0;
+          flex: 1;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+
+        .read-more {
+          display: block;
+          font-size: 1rem;
+          color: #007bff;
+          text-decoration: none;
+          margin-top: 5px;
+          transition: color 0.3s, text-decoration 0.3s;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+        .blog-actions {
+          display: flex;
+          flex-direction: row;
+          gap: 10px;
+          margin-top: auto;
+          padding-top: 10px;
+        
+          button {
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: opacity 0.3s, background-color 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        
+            &:hover {
+              opacity: 0.8;
+            }
+        
+            &.like {
+              color: #007bff;
+            }
+        
+            &.dislike {
+              color: #dc3545;
+            }
+        
+            &.comment {
+              color: #007bff;
+            }
+        
+            &.share {
+              color: #007bff;
+            }
+        
+            &.active {
+              color: #fff; /* Change icon color in active state */
+            }
+        
+            &.active.like {
+              background-color: #007bff; /* Blue color for active state of Like */
+            }
+        
+            &.active.dislike {
+              background-color: #dc3545; /* Red color for active state of Dislike */
+            }
+        
+            &.active.comment {
+              background-color: #007bff; /* Blue color for active state of Comment */
+            }
+        
+            &.active.share {
+              background-color: #007bff; /* Blue color for active state of Share */
+            }
+          }
+        
+          svg {
+            font-size: 1.5rem; /* Adjust the size of the icons */
+          }
+        }
+        
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

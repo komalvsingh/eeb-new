@@ -1,0 +1,237 @@
+@import "../../responsive.scss";
+
+.singlePage {
+  display: flex;
+  height: 100%;
+
+  @include md {
+    flex-direction: column;
+    overflow: scroll;
+  }
+
+  .details {
+    flex: 3;
+    height: 100%;
+    overflow-y: scroll;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      padding-right: 50px;
+
+      @include lg {
+        padding-right: 20px;
+      }
+      @include md {
+        padding-right: 0px;
+      }
+
+      .info {
+        margin-top: 50px;
+        .top {
+          display: flex;
+          justify-content: space-between;
+
+          @include sm {
+            flex-direction: column;
+            gap: 20px;
+          }
+
+          .post {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+
+            h1 {
+              font-weight: 400;
+              color: #2d2a26; /* Dark Gray for post title */
+            }
+
+            .address {
+              display: flex;
+              gap: 5px;
+              align-items: center;
+              color: #888; /* Gray color for address text */
+              font-size: 14px;
+
+              img {
+                width: 16px;
+                height: 16px;
+              }
+            }
+
+            .price {
+              padding: 5px;
+              background-color: rgba(254, 205, 81, 0.438); /* Light Brown for price background */
+              border-radius: 5px;
+              width: max-content;
+              font-size: 20px;
+              font-weight: 300;
+              color: #2d2a26; /* Dark Gray for price text */
+            }
+          }
+
+          .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 50px;
+            border-radius: 10px;
+            background-color: rgba(254, 205, 81, 0.209); /* Light Brown for user background */
+            font-weight: 600;
+
+            img {
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+              object-fit: cover;
+            }
+          }
+        }
+
+        .bottom {
+          margin-top: 50px;
+          color: #2d2a26; /* Dark Gray for bottom text */
+          line-height: 20px;
+        }
+      }
+    }
+  }
+
+  .features {
+    flex: 2;
+    background-color: #fcf5f3; /* Light Beige for features background */
+    height: 100%;
+    overflow-y: scroll;
+
+    @include md {
+      flex: none;
+      height: max-content;
+      margin-bottom: 50px;
+    }
+
+    .wrapper {
+      padding: 0px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      @include md {
+        padding: 20px;
+      }
+
+      img {
+        width: 24px;
+        height: 24px;
+      }
+
+      .title {
+        font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 10px;
+        color: #2d2a26; /* Dark Gray for feature titles */
+      }
+
+      .feature {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        img {
+          background-color: rgba(254, 205, 81, 0.209); /* Light Brown for feature icons background */
+        }
+
+        .featureText {
+          span {
+            font-weight: bold;
+            color: #2d2a26; /* Dark Gray for feature text */
+          }
+
+          p {
+            font-size: 14px;
+            color: #2d2a26; /* Dark Gray for paragraph text */
+          }
+        }
+      }
+
+      .listVertical {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 20px 10px;
+        background-color: #fdfbf9; /* Off-White for list backgrounds */
+        border-radius: 10px;
+      }
+
+      .listHorizontal {
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10px;
+        background-color: #fdfbf9; /* Off-White for list backgrounds */
+        border-radius: 10px;
+      }
+
+      .sizes {
+        display: flex;
+        justify-content: space-between;
+
+        @include lg {
+          font-size: 12px;
+        }
+
+        .size {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          background-color: #fdfbf9; /* Off-White for size backgrounds */
+          padding: 10px;
+          border-radius: 5px;
+        }
+      }
+
+      .mapContainer {
+        width: 100%;
+        height: 200px;
+        background-color: #fdfbf9; /* Off-White for map container background */
+      }
+
+      .buttons {
+        display: flex;
+        justify-content: space-between;
+
+        button {
+          padding: 20px;
+          display: flex;
+          align-items: center;
+          gap: 5px;
+          background-color: #fff; /* White for button background */
+          border: 1px solid #fece51; /* Light Brown for button borders */
+          border-radius: 5px;
+          cursor: pointer;
+
+          img {
+            width: 16px;
+            height: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+.largeChat {
+  width: 500px; // Increase this width as needed
+  max-width: 100%; // Ensure responsiveness by setting a maximum width as a percentage of the screen
+  height: 100%; // Optional: Adjust the height if necessary
+  right: 0; // Optional: Adjust the position if you want the chat to appear on the right
+  position: fixed; // Ensure it stays on the side and scrolls with the page if needed
+  z-index: 100; // Ensure it's above other elements
+  background-color: #fff; // Define background if needed
+  border-left: 1px solid #ccc; // Optional: Add a border to visually separate it
+}
+

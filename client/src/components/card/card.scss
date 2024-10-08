@@ -1,0 +1,107 @@
+@import "../../responsive.scss";
+
+.card {
+  display: flex;
+  gap: 15px;
+  background-color: #fdfbf9; /* Off-White background */
+  padding: 15px;
+  border-radius: 10px;
+
+  .imageContainer {
+    flex: 1.5;
+    height: 100px; /* Reduced height */
+
+    @include md {
+      display: none;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 8px;
+    }
+  }
+
+  .textContainer {
+    flex: 2.5;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px; /* Reduced gap between elements */
+
+    img {
+      width: 14px; /* Slightly smaller icons */
+      height: 14px;
+    }
+
+    .title {
+      font-size: 18px; /* Slightly smaller title */
+      font-weight: 600;
+      color: #2d2a26; /* Dark Gray for the title */
+      transition: all 0.3s ease;
+
+      &:hover {
+        color: #aa723f; /* Brown on hover */
+        scale: 1.01;
+      }
+    }
+
+    .address {
+      font-size: 13px; /* Slightly smaller font for the address */
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: #bfa185; /* Light Brown for the address */
+    }
+
+    .price {
+      font-size: 18px; /* Reduced font size for the price */
+      font-weight: 300;
+      padding: 4px 6px; /* Smaller padding */
+      border-radius: 5px;
+      background-color: rgba(254, 205, 81, 0.438); /* Original background */
+      width: max-content;
+    }
+
+    .bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 8px; /* Reduced gap between features and icons */
+
+      .features {
+        display: flex;
+        gap: 15px; /* Reduced gap between features */
+        font-size: 13px; /* Slightly smaller feature text */
+
+        .feature {
+          display: flex;
+          align-items: center;
+          gap: 4px;
+          background-color: #d7cbc3; /* Light Beige for the feature background */
+          padding: 4px 6px; /* Smaller padding */
+          border-radius: 5px;
+        }
+      }
+
+      .icons {
+        display: flex;
+        gap: 15px; /* Reduced gap between icons */
+
+        .icon {
+          border: 1px solid #999;
+          padding: 3px 6px; /* Adjusted padding */
+          border-radius: 5px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          &:hover {
+            background-color: #d7cbc3; /* Light Beige on hover */
+          }
+        }
+      }
+    }
+  }
+}
