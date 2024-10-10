@@ -1,8 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
 @import "../../responsive.scss";
 
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+  70% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 .profilePage {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   height: 100%;
+  color: #333;
 
   @include md {
     flex-direction: column;
@@ -31,16 +73,23 @@
         justify-content: space-between;
 
         h1 {
-          font-weight: 300;
-          color: #2d2a26; /* Dark Gray for the title text */
+          font-weight: 400;
+          font-size: 2rem;
+          color: #6c63ff; /* Custom purple shade for titles */
         }
 
         button {
           padding: 12px 24px;
-          background-color: #fece51; /* Light Brown for the button background */
+          background-color: #ffdd57; /* Light Yellow for button background */
           cursor: pointer;
           border: none;
-          color: #2d2a26; /* Dark Gray text color for the button */
+          color: #2d2a26;
+          font-size: 1rem;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #ffce57; /* Slightly brighter on hover */
+          }
         }
       }
 
@@ -57,20 +106,45 @@
         }
 
         button {
-          width: 100px;
-          background-color: #2d2a26; /* Dark Gray for the button background */
+          width: 120px;
+          background-color: #2d2a26; /* Dark Gray for button */
           border: none;
-          color: #fdfbf9; /* Off-White text color for the button */
+          color: #fdfbf9;
           padding: 10px 20px;
           cursor: pointer;
           border-radius: 5px;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: #333;
+          }
         }
 
         img {
-          width: 40px;
-          height: 40px;
+          width: 60px;
+          height: 60px;
           border-radius: 50%;
           object-fit: cover;
+          border: 2px solid #6c63ff; /* Adding a border around the avatar */
+        }
+      }
+
+      .gifContainer {
+        margin-top: 20px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+
+        .gifAnimation {
+          width: 250px;
+          height: 250px;
+          border-radius: 10px;
+          box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+          transition: transform 0.3s ease;
+
+          &:hover {
+            transform: scale(1.05);
+          }
         }
       }
     }
@@ -78,8 +152,13 @@
 
   .chatContainer {
     flex: 2;
-    background-color: #d7cbc3; /* Light Beige for the chat container background */
+    background-color: #f0f0f0; /* Lighter background for chat */
     height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+    border-left: 8px solid #6c63ff; /* Left border to separate sections */
 
     @include md {
       flex: none;

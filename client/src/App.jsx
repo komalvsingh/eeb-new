@@ -1,5 +1,5 @@
 import HomePage from "./routes/homePage/homePage";
-import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ListPage from "./routes/listPage/listPage";
 import { Layout, RequireAuth } from "./routes/layout/layout";
 import SinglePage from "./routes/singlePage/singlePage";
@@ -10,16 +10,14 @@ import ProfileUpdatePage from "./routes/profileUpdatePage/profileUpdatePage";
 import NewPostPage from "./routes/newPostPage/newPostPage";
 import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loaders";
 import Dashboard from "./routes/Dashboard/dashboard";
-import AgentList from "./routes/Agents/agentlist";
 import MortgageApp from "./routes/Mortgage/mortgageapp";
 import Blog from "./routes/blog/blog";
-import PlanPage from "./components/plan";  // Add PlanPage
-import WelcomePage from "./components/welcome.jsx";  // Add WelcomePage
+import AgentList from "./routes/Agents/agentlist";
+import PlanPage from "./components/plan"
+import PlanPageWrapper from "./components/plan";
+import Help from "./routes/Help/Help";
 
 function App() {
-  const paymentDone = localStorage.getItem('paymentDone') === 'true';  // Check if payment is done
-  const registered = localStorage.getItem('registered') === 'true';    // Check if registration is done
-
   const router = createBrowserRouter([
     {
       path: "/",
@@ -30,46 +28,51 @@ function App() {
           element: <HomePage />,
         },
         {
-          path: "/plan",
-          element: <PlanPage />,
-        },
-        {
           path: "/dashboard",
-          element: paymentDone ? <Dashboard /> : <Navigate to="/plan" />, // Protect other pages until payment is done
-        },
-        {
-          path: "/mortgage",
-          element: paymentDone ? <MortgageApp /> : <Navigate to="/plan" />, // Protect until payment is done
+          element: <Dashboard />,
         },
         {
           path: "/list",
-          element: paymentDone ? <ListPage /> : <Navigate to="/plan" />, 
-          loader: paymentDone ? listPageLoader : null, // Only load data if payment is done
-        },
-        {
-          path: "/agent",
-          element: paymentDone ? <AgentList /> : <Navigate to="/plan" />,
+          element: <ListPage />,
+          loader: listPageLoader,
         },
         {
           path: "/:id",
-          element: paymentDone ? <SinglePage /> : <Navigate to="/plan" />,
-          loader: paymentDone ? singlePageLoader : null,
+          element: <SinglePage />,
+          loader: singlePageLoader,
         },
+
         {
           path: "/login",
           element: <Login />,
         },
         {
-          path: "/blog",
-          element: paymentDone ? <Blog /> : <Navigate to="/plan" />,
+          path: "/help",
+          element: <Help />,
         },
         {
           path: "/register",
-          element: <Register onRegister={() => localStorage.setItem('registered', 'true')} />, // Set registration status
+          element: <Register />,
         },
         {
-          path: "/welcome",
-          element: paymentDone ? <WelcomePage /> : <Navigate to="/plan" />,
+          path: "/dashboard",
+          element: <Dashboard />,
+        },
+        {
+          path: "/mortgage",
+          element: <MortgageApp />,
+        },
+        {
+          path: "/blog",
+          element: <Blog />,
+        },
+        {
+          path: "/agent",
+          element: <AgentList/>,
+        },
+        {
+          path: "/plan",
+          element: <PlanPageWrapper/>,
         },
       ],
     },
@@ -79,22 +82,18 @@ function App() {
       children: [
         {
           path: "/profile",
-          element: paymentDone ? <ProfilePage /> : <Navigate to="/plan" />,
-          loader: paymentDone ? profilePageLoader : null,
+          element: <ProfilePage />,
+          loader: profilePageLoader
         },
         {
           path: "/profile/update",
-          element: paymentDone ? <ProfileUpdatePage /> : <Navigate to="/plan" />,
+          element: <ProfileUpdatePage />,
         },
         {
           path: "/add",
-          element: paymentDone ? <NewPostPage /> : <Navigate to="/plan" />,
+          element: <NewPostPage />,
         },
       ],
-    },
-    {
-      path: "/plan",
-      element: registered && !paymentDone ? <PlanPage /> : <Navigate to="/" />, // Redirect based on registration and payment
     },
   ]);
 

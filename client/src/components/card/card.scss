@@ -1,104 +1,125 @@
-@import "../../responsive.scss";
-
 .card {
   display: flex;
-  gap: 15px;
-  background-color: #fdfbf9; /* Off-White background */
-  padding: 15px;
-  border-radius: 10px;
+  align-items: stretch;
+  background-color: #f9f9f9;
+  padding: 15px; /* Reduced padding */
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  gap: 15px; /* Reduced gap */
+  max-width: 800px;
+  margin: 20px auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+
+  &:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  }
 
   .imageContainer {
-    flex: 1.5;
-    height: 100px; /* Reduced height */
-
-    @include md {
-      display: none;
-    }
+    flex: 1;
+    max-width: 200px; /* Reduced image size */
+    height: auto;
+    border-radius: 12px;
+    overflow: hidden;
 
     img {
       width: 100%;
-      height: 100%;
+      height: auto;
       object-fit: cover;
-      border-radius: 8px;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
     }
   }
 
   .textContainer {
-    flex: 2.5;
+    flex: 2;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    gap: 8px; /* Reduced gap between elements */
-
-    img {
-      width: 14px; /* Slightly smaller icons */
-      height: 14px;
-    }
+    padding: 10px;
+    color: #333;
 
     .title {
-      font-size: 18px; /* Slightly smaller title */
-      font-weight: 600;
-      color: #2d2a26; /* Dark Gray for the title */
-      transition: all 0.3s ease;
-
+      font-size: 22px; /* Reduced title size */
+      font-weight: bold;
+      color: #222;
+      margin-bottom: 6px;
+      transition: color 0.3s ease;
+      
       &:hover {
-        color: #aa723f; /* Brown on hover */
-        scale: 1.01;
+        color: #007bff;
       }
     }
 
     .address {
-      font-size: 13px; /* Slightly smaller font for the address */
+      font-size: 14px; /* Reduced address size */
+      color: #555;
       display: flex;
       align-items: center;
-      gap: 4px;
-      color: #bfa185; /* Light Brown for the address */
+      gap: 5px;
+      margin-bottom: 8px;
+
+      img {
+        width: 14px; /* Adjusted icon size */
+        height: 14px;
+      }
     }
 
     .price {
-      font-size: 18px; /* Reduced font size for the price */
-      font-weight: 300;
-      padding: 4px 6px; /* Smaller padding */
-      border-radius: 5px;
-      background-color: rgba(254, 205, 81, 0.438); /* Original background */
-      width: max-content;
+      font-size: 18px; /* Reduced price size */
+      font-weight: 600;
+      color: #e63946;
+      margin-bottom: 15px;
     }
 
     .bottom {
       display: flex;
       justify-content: space-between;
-      gap: 8px; /* Reduced gap between features and icons */
-
+      align-items: center;
+      
       .features {
         display: flex;
-        gap: 15px; /* Reduced gap between features */
-        font-size: 13px; /* Slightly smaller feature text */
+        gap: 12px;
 
         .feature {
           display: flex;
           align-items: center;
-          gap: 4px;
-          background-color: #d7cbc3; /* Light Beige for the feature background */
-          padding: 4px 6px; /* Smaller padding */
-          border-radius: 5px;
+          gap: 6px;
+          font-size: 14px; /* Reduced feature text size */
+          color: #666;
+
+          img {
+            width: 16px; /* Adjusted feature icon size */
+            height: 16px;
+            filter: grayscale(1);
+          }
         }
       }
 
       .icons {
         display: flex;
-        gap: 15px; /* Reduced gap between icons */
+        gap: 12px;
 
         .icon {
-          border: 1px solid #999;
-          padding: 3px 6px; /* Adjusted padding */
-          border-radius: 5px;
-          cursor: pointer;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          background-color: #fff;
+          border-radius: 50%;
+          padding: 8px; /* Reduced icon padding */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: all 0.3s ease;
 
           &:hover {
-            background-color: #d7cbc3; /* Light Beige on hover */
+            background-color: #007bff;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+          }
+
+          img {
+            width: 20px; /* Adjusted icon size */
+            height: 20px;
+            filter: invert(1);
           }
         }
       }
