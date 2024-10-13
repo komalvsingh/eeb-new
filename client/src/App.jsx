@@ -12,7 +12,7 @@ import { listPageLoader, profilePageLoader, singlePageLoader } from "./lib/loade
 import Dashboard from "./routes/Dashboard/dashboard";
 import MortgageApp from "./routes/Mortgage/mortgageapp";
 import Blog from "./routes/blog/blog";
-import AgentList from "./routes/Agents/agentlist";
+import CreatorList from "./routes/Agents/CreatorList";
 import PlanPage from "./components/plan"
 import PlanPageWrapper from "./components/plan";
 import Help from "./routes/Help/Help";
@@ -30,6 +30,10 @@ function App() {
         {
           path: "/dashboard",
           element: <Dashboard />,
+        },
+        {
+          path:"/explore",
+          element:<CreatorList/>
         },
         {
           path: "/list",
@@ -66,10 +70,10 @@ function App() {
           path: "/blog",
           element: <Blog />,
         },
-        {
-          path: "/agent",
-          element: <AgentList/>,
-        },
+        // {
+        //   path: "/agent",
+        //   element: <AgentList/>,
+        // },
         {
           path: "/plan",
           element: <PlanPageWrapper/>,
