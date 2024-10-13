@@ -1,46 +1,73 @@
 .login {
   display: flex;
-  height: 80vh; /* Adjusted height */
-  width: 80vw; /* Adjusted width */
-  max-height: 600px; /* Optional: Max height */
-  max-width: 800px; /* Optional: Max width */
-  margin: auto; /* Center container horizontally */
-  border-radius: 8px; /* Optional: Rounded corners */
-  overflow: hidden; /* Hide overflow */
-  border: 2px solid #2d2a26; /* Blue border for the entire login page */
-margin-top: 20px;
+  height: 80vh;
+  width: 100%;
+  max-height: 600px;
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 20px;
   
   .left-side {
-    flex: 1; /* Take up equal space */
+    flex: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 22px;
-    margin-left: 40px;
-    margin-bottom: 22px;
-    margin-right: 20px;
+    margin: 22px 20px 22px 40px;
     border-radius: 8px;
-    position: relative; /* Required for absolute positioning of images */
+    position: relative;
     overflow: hidden;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-      background-position: center;
-      animation: imageChange 16s infinite; /* Adjusted time for 4 images */
-      z-index: -1; /* Ensure image is behind the content */
-    }
     
-    /* Remove the fixed background image */
-    img {
-      display: none; /* Hide any <img> tag if present */
+    /* Lottie animation container */
+    .login-animation {
+      width: 100%; 
+      height: 100%;
     }
   }
+
+// .login {
+//   display: flex;
+//   height: 80vh; /* Adjusted height */
+//   width: 80vw; /* Adjusted width */
+//   max-height: 600px; /* Optional: Max height */
+//   max-width: 800px; /* Optional: Max width */
+//   margin: auto; /* Center container horizontally */
+//   border-radius: 8px; /* Optional: Rounded corners */
+//   overflow: hidden; /* Hide overflow */
+//   border: 2px solid #2d2a26; /* Blue border for the entire login page */
+// margin-top: 20px;
+  
+//   .left-side {
+//     flex: 1; /* Take up equal space */
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin-top: 22px;
+//     margin-left: 40px;
+//     margin-bottom: 22px;
+//     margin-right: 20px;
+//     border-radius: 8px;
+//     position: relative; /* Required for absolute positioning of images */
+//     overflow: hidden;
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       top: 0;
+//       left: 0;
+//       width: 100%;
+//       height: 100%;
+//       background-size: cover;
+//       background-position: center;
+//       animation: imageChange 16s infinite; /* Adjusted time for 4 images */
+//       z-index: -1; /* Ensure image is behind the content */
+//     }
+    
+//     /* Remove the fixed background image */
+//     // img {
+//     //   display: none; /* Hide any <img> tag if present */
+//     // }
+//   }
 
   .right-side {
     flex: 1; /* Take up equal space */
@@ -65,20 +92,24 @@ margin-top: 20px;
       justify-content: center;
       align-items: center;
       
-      
+  
+
       h1 {
-        margin-bottom: 30px; /* Increased margin */
-        color: #2d2a26; /* Blue color for text */
+        margin-bottom: 30px; 
+        color: #FFE700;
         font-size: 36px; /* Increased font size */
         text-align: center;
         font-weight: bold;
         text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-        background: linear-gradient(45deg, #2d2a26, #a9a9a9); /* Blue gradient background */
-        -webkit-background-clip: text; /* Clip background to text */
-        -webkit-text-fill-color: transparent; /* Make text color transparent */
-        background-clip: text; /* Standard property */
         padding: 10px 20px; /* Padding around text */
         border-radius: 5px; /* Rounded corners */
+
+        background: linear-gradient(30deg, #fbff0d, #8022d2,#D875C7); /* Yellow to purple */
+        background-size: 200%; /* Make the gradient bigger to allow animation */
+        -webkit-background-clip: text; /* Clip the gradient to text */
+        -webkit-text-fill-color: transparent; /* Make text color transparent */
+        background-clip: text; /* Standard property */
+        animation: gradientAnimation 3s ease infinite; /* Apply animation */
       }
 
       input {
@@ -99,7 +130,7 @@ margin-top: 20px;
       button {
         width: 100%;
         padding: 15px; /* Increased padding */
-        background-color: #76471c; /* Blue background */
+        background-color: #df61ff; /* Blue background */
         border: none;
         color: white;
         border-radius: 5px;
@@ -112,7 +143,7 @@ margin-top: 20px;
         }
 
         &:hover {
-          background-color: #522f0e; /* Darker blue on hover */
+          background-color: #A594F9; /* Darker blue on hover */
           transform: scale(1.05); /* Slightly enlarge button on hover */
           box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
         }
@@ -144,22 +175,22 @@ margin-top: 20px;
     }
   }
 
-  @keyframes imageChange {
-    0% {
-      background-image: url('/bg2.jpg');
-    }
-    25% {
-      background-image: url('/bg3.jpg');
-    }
-    50% {
-      background-image: url('/bg4.jpg');
-    }
-    75% {
-      background-image: url('/bg5.jpg');
-    }
-    100% {
-      background-image: url('/bg2.jpg');
-    }
-  }
+  // @keyframes imageChange {
+  //   0% {
+  //     background-image: url('/bg2.jpg');
+  //   }
+  //   25% {
+  //     background-image: url('/bg3.jpg');
+  //   }
+  //   50% {
+  //     background-image: url('/bg4.jpg');
+  //   }
+  //   75% {
+  //     background-image: url('/bg5.jpg');
+  //   }
+  //   100% {
+  //     background-image: url('/bg2.jpg');
+  //   }
+  // }
 }
 

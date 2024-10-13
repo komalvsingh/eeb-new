@@ -4,6 +4,8 @@ import "./login.scss";
 import { Link, useNavigate } from "react-router-dom";
 import apiRequest from "../../lib/apiRequest";
 import { AuthContext } from "../../context/AuthContext";
+import Lottie from "react-lottie";
+import login from "./login.json"
 
 function Login() {
   const [error, setError] = useState("");
@@ -11,6 +13,15 @@ function Login() {
 
   const { updateUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const defaultOptions = {
+    loop: true,
+    autoplay: true, 
+    animationData: login,
+    rendererSettings: {
+      preserveAspectRatio: 'xMidYMid slice'
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -40,12 +51,15 @@ function Login() {
     <div className="login">
       <div className="left-side">
         {/* Background image */}
-        <img src="/bg.png" alt="Background" />
+        {/* <img src="/bg.png" alt="Background" /> */}
+        <div className="login-animation">
+          <Lottie options={defaultOptions} />
+        </div>
       </div>
       <div className="right-side">
         <div className="formContainer">
           <form onSubmit={handleSubmit}>
-            <h1>Welcome back</h1>
+            <h1>Welcome back!</h1>
             <input
               name="username"
               required

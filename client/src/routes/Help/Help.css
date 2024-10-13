@@ -4,11 +4,32 @@
   font-family: Arial, sans-serif;
 }
 
+.help-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin-bottom: 20px;
+  padding: 50px;
+}
+
+.help-question h2 {
+  font-size: 50px;
+  font-weight: bolder;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.help-animation {
+  width: 500px;
+  height: 200px;
+}
+
+
 /* Reviews Section */
 .reviews-section {
-  background-color: #FFECC8;
+  background-color: #F5EFFF;
   padding: 20px;
-  margin-bottom: 30px;
   margin-top: 30px;
   transition: transform 0.3s;
   border-radius: 20px;
@@ -22,6 +43,8 @@
 .reviews-section h2 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 40px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .review-input {
@@ -35,7 +58,7 @@
 .submit-review-btn {
   display: inline-block;
   padding: 10px 20px;
-  background-color: #ff9900;
+  background-color: #d45fff;
   color: #fff;
   border: none;
   border-radius: 50px;
@@ -44,7 +67,7 @@
 }
 
 .submit-review-btn:hover {
-  background-color: #E8B86D;
+  background-color: #A594F9;
 }
 
 .reviews-list {
@@ -65,10 +88,12 @@
 
 /* FAQ Section */
 .faq-container {
+  
   padding: 20px; 
   border-radius: 20px;
   transition: transform 0.3s; 
-  background-color: #FFD09B;
+  background-color: #F5EFFF;
+  margin-bottom: 40px;
 }
 
 .faq-container:hover {
@@ -78,6 +103,7 @@
 h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .faq-content {
